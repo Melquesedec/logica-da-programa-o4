@@ -89,7 +89,7 @@ function resultado4(){
         }else{
             resultado5.innerHTML=(`Você digitou uma vogal`)
     } 
-    }
+}
 
     function resultado6(){
         let maior = parseInt(document.getElementById('maior').value);
@@ -97,13 +97,77 @@ function resultado4(){
         let meio = parseInt(document.getElementById('meio').value);
         let resultado6 = document.getElementById('resultado6');
 
-        if( maior > menor <= meio){       
-            resultado6.innerHTML=(`Maior número é ${maior} e o menor ${menor}`)
+        if( maior > menor && maior < meio){       
+            resultado6.innerHTML=(`Maior número é ${maior}`)
         }
-        else if( maior <= menor > meio){       
-            resultado6.innerHTML=(`Maior número é ${maior} e o menor ${menor}`)
+        else if( menor > maior && menor < meio){       
+            resultado6.innerHTML=(`Maior número é ${menor}`)
         }
-        
+        else if( meio > menor && meio < maior){       
+            resultado6.innerHTML=(`Maior número é ${meio}`)
+        }
+        if( meio > maior && meio < menor){       
+            resultado6.innerHTML=(`Menor número é ${meio}`)
+        }
+        else if( menor > meio && menor < maior){       
+            resultado6.innerHTML=(`Menor número é ${menor}`)
+        }
+        else if( maior > meio && maior < menor){       
+            resultado6.innerHTML=(`Menor número é ${maior}`)
+        }
+
 }
 
+function resultado7(){
+    let selecionahorario = document.getElementById('selecionahorario').value;
+    let resultado7 = document.getElementById('resultado7');
+
+        if(selecionahorario <= 0){
+        resultado7.innerHTML=(`Bom dia!`)
+        }
+        else if(selecionahorario = 1){       
+        resultado7.innerHTML=(`Boa Tarde!`)
+        }
+        else if(selecionahorario == 2){       
+            resultado7.innerHTML=(`Boa noite!`)
+        }
+} 
+
+function resultado8(){
+    let AlimentoP = document.getElementById('AlimentoP').value;
+    let resultado8 = document.getElementById('resultado8');
+
+        if(AlimentoP == 0){
+        resultado8.innerHTML=(`Este produto é o mais econômico.`)
+        }
+        else if(AlimentoP == 1){       
+        resultado8.innerHTML=(`Este produto está na media.`)
+        }
+        else if(AlimentoP == 2){       
+            resultado8.innerHTML=(`Este produto está acima da media.`)
+        }
+    }
+
+        function resultado9(){
+            let nota1 = parseFloat(document.getElementById("nota1").value);
+            let nota2 = parseFloat(document.getElementById("nota2").value);
+            let nota = (nota1 + nota2) / 2
+            let resultado9 = document.getElementById('resultado9');
+            
+            if(nota == 10 || nota >= 9){
+                resultado9.innerHTML=(`Você recebeu um A`)
+            }
+            else if(nota == 7.5 || nota == 8.9){
+                resultado9.innerHTML=(`Você recebeu um B`)
+            }
+            else if(nota == 6 || nota == 7.4){
+                resultado9.innerHTML=(`Você recebeu um C`)
+            }
+            else if(nota == 4 || nota == 5.9){
+                resultado9.innerHTML=(`Você recebeu um D`)
+            }
+            else if(nota == 3.9 || nota == 0){
+                resultado9.innerHTML=(`Você recebeu um E`)
+            }
+}
 
